@@ -1,2 +1,5 @@
 runtime: custom
 env: flex
+env_variables:
+  COMPOSE_DOCKER_CLI_BUILD: 1
+  DOCKER_BUILDKIT: 1
