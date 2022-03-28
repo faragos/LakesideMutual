@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/${PROJECT_ID}/github.com/faragos/lakesidemutual/customer-core:${COMMIT_SHA}', '.']
+images: ['gcr.io/${PROJECT_ID}/github.com/faragos/lakesidemutual/customer-core:${COMMIT_SHA}']
