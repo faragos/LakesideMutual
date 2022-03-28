@@ -4,4 +4,4 @@ steps:
   env:
   - "DOCKER_BUILDKIT=1"
 images: ['gcr.io/${PROJECT_ID}/github.com/faragos/lakesidemutual/customer-core:${COMMIT_SHA}']
-timeout: 1200s
+timeout: 12000s
