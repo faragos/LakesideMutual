@@ -2,7 +2,7 @@ FROM maven:3.6.1-jdk-8-alpine AS build
 ARG BASE=/usr/src/app
 COPY pom.xml ${BASE}/
 COPY src ${BASE}/src
-RUN target=/root/.m2 mvn -f ${BASE}/pom.xml install -DskipTests
+RUN --mount=type=cache,target=/root/.m2 mvn -f ${BASE}/pom.xml install -DskipTests
 
 FROM openjdk:8-jdk-alpine
 COPY --from=build /usr/src/app/target/dependency/BOOT-INF/lib/* /app/lib/
